@@ -5,6 +5,7 @@
 
   @helper.form(action = routes.HomeController.postRequest()) {
     @helper.inputText(form("url"))
+    <input type="submit" value="GET"/>
   }
 
   @{ShowResponse(response)}
