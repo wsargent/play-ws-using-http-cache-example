@@ -1,5 +1,11 @@
-@()
+@(form: Form[RequestForm], response: Option[play.api.libs.ws.WSResponse])(implicit request: MessagesRequestHeader)
 
 @main("Welcome to Play") {
   <h1>Welcome to Play!</h1>
+
+  @helper.form(action = routes.HomeController.postRequest()) {
+    @helper.inputText(form("url"))
+  }
+
+  @{ShowResponse(response)}
 }
