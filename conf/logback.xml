@@ -1,6 +1,8 @@
 <!-- https://www.playframework.com/documentation/latest/SettingsLogger -->
 <configuration>
 
+  <shutdownHook class="ch.qos.logback.core.hook.DelayingShutdownHook"/>
+
   <conversionRule conversionWord="coloredLevel" converterClass="play.api.libs.logback.ColoredLevel" />
 
   <appender name="FILE" class="ch.qos.logback.core.FileAppender">
@@ -28,7 +30,7 @@
   <logger name="application" level="DEBUG" />
 
   <root level="INFO">
-    <!--<appender-ref ref="ASYNCFILE" />-->
+    <appender-ref ref="ASYNCFILE" />
     <appender-ref ref="ASYNCSTDOUT" />
   </root>
 
